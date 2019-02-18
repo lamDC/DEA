@@ -3,7 +3,11 @@ package oose.dea;
 import java.util.stream.IntStream;
 
 public class FizzBuzz {
+
+    private static final int BUZZ_NUMBER = 5;
+    private static final int FIZZ_NUMBER = 3;
     private String name;
+
     public FizzBuzz(String name) {
         this.name = name;
     }
@@ -22,9 +26,9 @@ public class FizzBuzz {
     void doFizzBuzz(int i) {
         if (i % 15 == 0) {
             System.out.println("FizzBuzz");
-        } else if (i % App.FIZZ_NUMBER == 0) {
+        } else if (i % FIZZ_NUMBER == 0) {
             System.out.println("Fizz");
-        } else if (i % App.BUZZ_NUMBER == 0) {
+        } else if (i % BUZZ_NUMBER == 0) {
             System.out.println("Buzz");
         }
     }
