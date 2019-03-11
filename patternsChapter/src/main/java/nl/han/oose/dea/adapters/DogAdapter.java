@@ -1,6 +1,9 @@
-package nl.han.oose.dea;
+package nl.han.oose.dea.adapters;
 
-public class DogAdapter implements Animal{
+import nl.han.oose.dea.Animal;
+import nl.han.oose.dea.Dog;
+
+public class DogAdapter implements Animal {
     private Dog dog;
 
     public DogAdapter(){
@@ -8,7 +11,7 @@ public class DogAdapter implements Animal{
     }
 
     @Override
-    public String annoy(int number) {
+    public String makeSound(int number) {
         String sound = "";
         sound = dog.bark(number);
         return sound;

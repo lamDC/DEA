@@ -1,4 +1,9 @@
-package nl.han.oose.dea;
+package nl.han.oose.dea.factories;
+
+import nl.han.oose.dea.Animal;
+import nl.han.oose.dea.AnimalType;
+import nl.han.oose.dea.adapters.CatAdapter;
+import nl.han.oose.dea.adapters.DogAdapter;
 
 public class AnimalFactory {
 

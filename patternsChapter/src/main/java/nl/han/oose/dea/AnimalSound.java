@@ -1,6 +1,8 @@
 package nl.han.oose.dea;
 
-public class MakeSound {
+import nl.han.oose.dea.factories.AnimalFactory;
+
+public class AnimalSound {
 
     private AnimalFactory animalFactory;
 
@@ -10,7 +12,7 @@ public class MakeSound {
     private Animal animalType;
 
 
-    public MakeSound(String animal, int number){
+    public AnimalSound(String animal, int number){
         this.animal = animal;
         this.number = number;
 
@@ -24,6 +26,6 @@ public class MakeSound {
     }
 
     public String getSound(){
-        return animalType.annoy(number);
+        return animalType.makeSound(number);
     }
 }
