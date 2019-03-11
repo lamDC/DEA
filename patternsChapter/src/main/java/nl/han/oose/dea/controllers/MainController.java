@@ -2,24 +2,22 @@ package nl.han.oose.dea.controllers;
 
 import nl.han.oose.dea.AnimalSound;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+
+import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
 @Path("/")
 public class MainController {
 
     @GET
-    public String hello(){
+    public String hello() {
         return "Hello World";
     }
 
     @GET
     @Path("Dog/{number}")
     @Produces("application/json")
-    public Response getNumber(@PathParam("number") int number){
+    public Response getDogSound(@PathParam("number") int number) {
         AnimalSound geluid = new AnimalSound("Dog", number);
         return Response.ok().entity(geluid.getSound()).build();
 
@@ -30,7 +28,7 @@ public class MainController {
     @GET
     @Path("Cat/{number}")
     @Produces("application/json")
-    public Response getCatSound(@PathParam("number") int number){
+    public Response getCatSound(@PathParam("number") int number) {
         AnimalSound geluid = new AnimalSound("Cat", number);
         return Response.ok().entity(geluid.getSound()).build();
 
