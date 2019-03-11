@@ -7,7 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 @Path("/")
-public class hello {
+public class MainController {
 
     @GET
     public String hello(){
