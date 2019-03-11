@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="patternsee:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="patternsee-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="patternsee:war exploded" />
+    </root>
+  </artifact>
+</component>
