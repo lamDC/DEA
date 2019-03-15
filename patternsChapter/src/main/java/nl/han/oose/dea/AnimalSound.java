@@ -1,6 +1,7 @@
 package nl.han.oose.dea;
 
 import nl.han.oose.dea.factories.AnimalFactory;
+import nl.han.oose.dea.factories.AnimalType;
 
 public class AnimalSound {
 

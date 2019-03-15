@@ -1,7 +1,6 @@
 package nl.han.oose.dea.controllers;
 
 import nl.han.oose.dea.AnimalSound;
-import nl.han.oose.dea.AnimalType;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;

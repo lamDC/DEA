@@ -1,14 +1,18 @@
 package nl.han.ica.oose.dea;
 
+import java.math.BigDecimal;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class PrimeTestingApp {
 
     private static final int HIGHEST_NUMBER_TO_TEST = 1000;
 
-    public static void main(String[] args) {
-        PrimeTestingApp app = new PrimeTestingApp();
-        app.startTesting();
+    public static void main(String[] args) throws SQLException {
+
 
     }
 
