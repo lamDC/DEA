@@ -6,7 +6,7 @@ public class Connection {
     public static void main(String[] args) throws ClassNotFoundException {
         java.sql.Connection cnEmps = null;
         var driver = "com.sqlserver.jdbc.Driver";
-        String connectionString = "jdbc:sqlserver://localhost/Menu";
+        String connectionString = "jdbc:sqlserver://localhost/Spotitube";
 
         Class.forName(driver);
 

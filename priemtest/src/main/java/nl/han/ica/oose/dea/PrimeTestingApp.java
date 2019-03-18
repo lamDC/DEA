@@ -1,17 +1,50 @@
 package nl.han.ica.oose.dea;
 
 import java.math.BigDecimal;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class PrimeTestingApp {
 
     private static final int HIGHEST_NUMBER_TO_TEST = 1000;
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        java.sql.Connection cnEmps = null;
+        ResultSet rsEmps = null;
+        var driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        //org.postgresql.Driver
+        String connectionString = "jdbc:sqlserver://localhost:1433";
+        var userID = "diego";
+        var password = "cuppie123";
+
+        Class.forName(driver);
+
+        try
+        {
+            cnEmps = DriverManager.getConnection(connectionString, userID, password);
+            System.out.println(cnEmps.toString());
+        }
+        catch (SQLException e)
+        {
+            System.out.println("Error connecting to a database: " + e);
+        }
+
+        try
+        {
+            String sql = "SELECT * FROM [USER]";
+            PreparedStatement st = cnEmps.prepareStatement(sql);
+            rsEmps = st.executeQuery();
+            while (rsEmps.next())
+            {
+                String     name   = rsEmps.getString("Name");
+                System.out.println(name);
+            }
+
+        }
+        catch (SQLException e)
+        {
+            System.out.println("Error executing query: " + e);
+        }
 
 
     }
