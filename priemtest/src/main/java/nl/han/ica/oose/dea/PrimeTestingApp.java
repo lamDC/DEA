@@ -12,7 +12,6 @@ public class PrimeTestingApp {
         java.sql.Connection cnEmps = null;
         ResultSet rsEmps = null;
         var driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        //org.postgresql.Driver
         String connectionString = "jdbc:sqlserver://localhost:1433";
         var userID = "diego";
         var password = "cuppie123";
@@ -36,8 +35,13 @@ public class PrimeTestingApp {
             rsEmps = st.executeQuery();
             while (rsEmps.next())
             {
-                String     name   = rsEmps.getString("Name");
-                System.out.println(name);
+                String     name   = rsEmps.getString("USERNAME");
+                if(name.equals("diegoup")) {
+                    System.out.println(name);
+                }
+                else {
+                    System.out.println("nope");
+                }
             }
 
         }

@@ -30,21 +30,20 @@ public class LoginController {
     @POST
     //@Path("login")
     @Consumes("application/json")
-    public Response login(LoginRequestDto request){
+    public Response login(LoginRequestDto request) throws SQLException, ClassNotFoundException {
 
         LoginDAO dao = new LoginDAO();
 
-        String user = "Meron Brouwer";
-        String token = dao.performLogin(request);
+        LoginResponseDto loginResponseDto = dao.performLogin(request);
 
-        if("error".equals(token)){
+        System.out.println(loginResponseDto.getToken());
+
+
+        if("error".equals(loginResponseDto.getToken())){
             return Response.status(401).build();
         }
         else {
-            LoginResponseDto response = new LoginResponseDto();
-            response.setToken(token);
-            response.setUser(user);
-            return Response.ok().entity(response).build();
+            return Response.ok().entity(loginResponseDto).build();
         }
     }
 
